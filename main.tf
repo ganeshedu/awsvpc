@@ -1,3 +1,12 @@
+# Use s3 bucket in the backend to store Terraform state file
+terraform {
+backend  "s3" {
+    bucket  = "tf-backend-space"
+    key     = "prod/awsvpc-state"
+    region  = "us-east-1"
+    }
+}
+
 # Configure the AWS Provider
 provider "aws" {
   profile = "default"
